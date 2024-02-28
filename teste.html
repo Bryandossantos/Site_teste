@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congregação Fortaleza</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: black url('fund.webp') top center;
+        background-size: cover;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #555;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #pdf-container {
+        margin-top: 20px;
+        width: 100%;
+        height: 100vh; /* Altura da tela inteira */
+        border: none; /* Remove a borda padrão do iframe */
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Opções</h1>
+    <nav>
+        <a href="Saída de Campo-Março 24.pdf" target="pdf-frame">Saída de campo</a>
+        <a href="limpeza pós.pdf" target="pdf-frame">Limpeza pós reunião</a>
+        <a href="limpeza geral.pdf" target="pdf-frame">Limpeza geral</a>
+        <a href="#" id="option4">Discurso público</a>
+        <a href="#" id="option5">Nossa vida e ministério</a>
+    </nav>
+</header>
+<iframe id="pdf-container" name="pdf-frame"></iframe>
+
+<script>
+    // Função para ajustar o tamanho do iframe para tela inteira
+    function ajustarTamanhoIframe() {
+        const pdfContainer = document.getElementById('pdf-container');
+        pdfContainer.style.height = window.innerHeight + 'px'; // Define a altura do iframe como a altura da janela
+    }
+
+    // Chama a função quando a página é carregada e quando a janela é redimensionada
+    window.addEventListener('load', ajustarTamanhoIframe);
+    window.addEventListener('resize', ajustarTamanhoIframe);
+</script>
+</body>
+</html>
